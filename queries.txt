@@ -1,0 +1,54 @@
+Predsjednistvo Dropdown za FBiH: 
+
+SELECT DISTINCT Unit_Name FROM ElectionUnit e 
+WHERE (e.Parent_ID < 6 AND e.Parent_ID > 0) OR (e.Parent_ID > 200 AND e.Parent_ID < 211) OR (e.Parent_ID > 400 AND e.Parent_ID < 413) 
+ORDER BY Unit_Name ASC
+
+......
+
+Predjsednistvo Dropdown za RS:
+SELECT DISTINCT Unit_Name FROM ElectionUnit e 
+WHERE (e.Parent_ID > 5 AND e.Parent_ID < 9) OR (e.Parent_ID > 300 AND e.Parent_ID < 304) 
+ORDER BY Unit_Name ASC
+
+......
+
+Ispis ukupnih podataka za FBiH: 
+
+SELECT C_Fname, C_Lname, Party_Name, SUM(NumOfVotes) 
+FROM Candidate c, Party p, Votes v, VotesDetails vd 
+WHERE c.Candidate_ID = v.Candidate AND p.Party_ID = v.Party AND v.Position = 1 AND v.Voting_ID = vd.Votes AND (c.C_Nationality = 'Bošnjak' OR c.C_Nationality = 'Hrvat') 
+GROUP BY C_Fname, C_Lname, Party_Name
+
+......
+
+Ispis ukupnih podataka za RS:
+
+SELECT C_Fname, C_Lname, Party_Name, SUM(NumOfVotes) 
+FROM Candidate c, Party p, Votes v, VotesDetails vd 
+WHERE c.Candidate_ID = v.Candidate AND p.Party_ID = v.Party AND v.Position = 1 AND v.Voting_ID = vd.Votes AND c.C_Nationality = 'Srbin' 
+GROUP BY C_Fname, C_Lname, Party_Name
+
+......
+
+Ispis podataka po regiji iz Dropdowna: 
+
+SELECT C_Fname, C_Lname, Party_Name, SUM(NumOfVotes) as glasovi
+FROM Candidate c, Party p, Votes v, VotesDetails vd 
+WHERE c.Candidate_ID = v.Candidate AND p.Party_ID = v.Party AND v.Position = 1 AND v.Voting_ID = vd.Votes AND vd.EUnit = $Varijabla(ID koji ce se dobiti iz clicka na dropdown) 
+GROUP BY C_Fname, C_Lname, Party_Name
+ORDER BY glasovi DESC
+
+......
+
+Generalni pregled za drzavni parlament: 
+
+SELECT Party_Name, SUM(NumOfVotes) as glasovi
+FROM Party p, Votes v, VotesDetails vd 
+WHERE v.Position = 2 AND p.Party_ID = v.Party 
+GROUP BY Party_Name
+ORDER BY glasovi DESC 
+
+......
+
+

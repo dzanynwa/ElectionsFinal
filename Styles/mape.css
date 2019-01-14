@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hide{
+    display: none;
+}
+.topnav .icon {
+    display: none;
+  }
+header{
+    background-color: #2a0e80;
+    color: white;
+    text-align: center;
+    
+    border-top: 15px solid #f7c800;
+}
+header h1{ 
+    padding: 20px 70px;
+    color: white;
+    float: left;
+}
+header ul{
+    padding: 20px 20px;
+    display: inline-block;
+}
+header ul li{
+    border-left: 2px solid #f7c800;
+    padding: 10px; 
+    display: inline-block;
+    color: white;
+}
+header ul li:hover{
+    background-color: #f7c800;
+    color: #2a0e80;
+}
+.active{
+    background-color: #f7c800;
+    color: #2a0e80; 
+}
+header ul li a{
+    text-decoration: none;
+    color: white;
+}
+.map {
+    fill:#2a0e80;
+    border: 2px solid #2a0e80; 
+    box-shadow: 2px black;
+    padding: 20px;
+    margin: 20px;
+    float: left;
+}
+.hover:hover {
+    fill: #f7c800;
+   cursor: pointer; 
+    transition: ease-in 0.5s;
+}
+#BA-BRC:hover {
+    cursor: not-allowed;      
+}
+#brcko {
+    cursor:not-allowed;
+}
+
+.tabela{
+    display: inline-block;
+    float: left;
+    margin: 20px 40px;
+    border-collapse: collapse;
+}
+.tabela th{
+    background-color: #f7c800;
+    border: 2px solid #2a0e80;
+    padding: 5px 25px;
+}
+.tabela tr, td{
+    border: 2px solid #2a0e80;
+}
+.tabela td{
+    padding: 10px 25px;
+}
+tr:hover {background-color: #f2f2f2;}
+.dugmad{
+    display: inline-block;
+}
+.button{
+    margin-left: 20px;
+    width: 190px;
+    padding: 15px 10px; 
+    background-color: #eeeeee;
+    color: #2a0e80; 
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 2px #2a0e80;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.button:hover{
+    background-color: #2a0e80;
+    color: #eeeeee;
+    border: solid 2px #eeeeee;
+} 
+
+.left{
+    padding: 0px 40px;
+    width: 30%;
+    float: left;
+}
+.right{
+    width: 55%;
+    display: inline-block;
+}
+select{
+    width: 445px;
+    height: 35px;
+    margin: 20px;
+    border: 2px solid #2a0e80;
+}
+
+.card{
+    margin: 20px;
+    width: 20%;
+    padding: 20px;
+    border: 2px solid #2a0e80; 
+    display: inline-block;
+    text-align: center;
+}
+.card h2{
+    font-weight: bold; 
+    color: #2a0e80;
+}
+.card h1{
+    font-weight: lighter; 
+    color: #f7c800;
+    padding: 5px;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    *{
+        box-sizing: border-box;
+    }
+    .hide{
+        display: block;
+    }
+    #opcije{
+        display: block;
+    }
+    #menuToggle{
+        display: block;
+    }
+    .map{
+        display: none;
+    }
+    .left .button{
+        display: inline-block;
+    }
+    .button{
+        margin: 10px 85px;
+        width: 150px;
+        display: inline-block;
+    }
+    header h1{
+        margin-left: 30px;
+        text-align: center;
+        visibility: visible;
+        margin-bottom: -20px;
+    }
+    header ul li{
+        display: none; 
+    }
+    .right{
+        margin-top: 10px;
+        display: block;
+    }
+    .card{
+        clear: both;
+        display: block;
+        text-align: center;
+        width: 200px;
+        font-size: 12px;
+        height: 100px;
+        padding: 15px;
+        margin: 10px 100px;
+    }
+    .tabela td{
+        min-width:100px;
+        max-width: 100px;
+        padding: 10px;
+        margin: 5px;
+    }
+    .tabela{
+        text-align: center;
+    }
+    select{
+        width: 280px;
+    }
+    #bosnjak{
+        margin-left: 55%;
+    }
+    #hrvat{
+        margin-left: 55%;
+    }
+  }
+
+@media only screen and (min-width: 700px) and (max-width: 1350px) {
+    *{
+        box-sizing: border-box;
+    }
+    .left{
+        width: 100%;
+        margin-left: 25%;
+    }
+    .right{
+        width: 100%;
+    }
+    select{
+        clear: both;
+        display: block;
+        margin-left: -5px;
+    }
+    header h1{
+        margin-left: 35%;
+    }
+    .button{
+        float: left;
+    }
+    .card{
+        float: left;
+    }
+    .tabela{
+        margin-left: 20%;
+    }
+    #prva{
+        margin-left: 15%;
+    }
+    #bosnjak{
+        margin-left: 30%;
+        text-align: center;
+    }
+    
+    
+}
+@media only screen and (min-width: 501px) and (max-width: 699px) {
+    *{
+        box-sizing: border-box;
+    }
+
+    .left{
+        width: 100%;
+        display: block;
+    }
+    .map{
+        margin-left: 5%;
+        display: block;
+    }
+    .right{
+        width: 100%;
+    }
+    select{
+        width: 90%;
+    }
+    header h1{
+        margin-left: 20%;
+    }
+    .button{
+        float: left;
+    }
+    .card{
+        float: left;
+        font-size: 10px;
+    }
+    .tabela{
+        margin-left: 7%;
+    }
+    #prva{
+        margin-left: 10%;
+    }
+    #bosnjak{
+        margin-left: 10%;
+        text-align: center;
+        
+    }
+    
+    
+}
+@media only screen and (min-width: 401px) and (max-width: 500px) {
+    *{
+        box-sizing: border-box;
+    }
+    .left{
+        width: 100%;
+    }
+    .hide{
+        display: block;
+    }
+    header ul li{
+        visibility: hidden;
+    }
+    header ul li a{ 
+        font-size: 2px;
+    }
+    .map{
+        display: none;
+    }
+    .right{
+        width: 100%;
+    }
+    select{
+        width: 90%;
+    }
+    header h1{
+        margin-left: 15%;
+        margin-bottom: -55px;
+    }
+    .button{
+        margin-top: 10px;
+        float: left;
+        margin-left: 22%;
+    }
+    .card{
+        clear: both;
+        display: block;
+        text-align: center;
+        width: 200px;
+        font-size: 12px;
+        height: 100px;
+        padding: 15px;
+        margin: 10px 100px;
+    }
+    .tabela{
+        margin-left: 2%;
+    }
+    #prva{
+        clear: both;
+        display: block;
+        text-align: center;
+        width: 200px;
+        font-size: 12px;
+        height: 100px;
+        padding: 15px;
+        margin: 10px 100px;
+    }
+    #bosnjak{
+        margin-left: 22%;
+        text-align: center;
+        display: block;
+    }
+}
+
